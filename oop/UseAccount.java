@@ -24,11 +24,17 @@ class UseAccount {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("enter the account id,name and balance");
-        int id = sc.nextInt();
-        String name = sc.next();
-        double b = sc.nextDouble();
-        Account obj = new Account(id, name, b);
-        obj.display();
+        Account[] obj = new Account[2];
+        for (int i = 0; i < obj.length; i++) {
+
+            System.out.println("enter the account id,name and balance");
+            int id = sc.nextInt();
+            String name = sc.next();
+            double b = sc.nextDouble();
+            obj[i] = new Account(id, name, b);
+        }
+        for (Account ac : obj) {
+            ac.display();
+        }
     }
 }
